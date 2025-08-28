@@ -1,0 +1,1 @@
+import { connect } from '@/lib/mongoose'; import Mentor from '@/models/Mentor'; export default async function handler(req,res){ await connect(); if(req.method==='GET'){ const mentors = await Mentor.find().lean(); return res.json({ mentors }); } if(req.method==='POST'){ const m = await Mentor.create(req.body); return res.json({ mentor: m }); } res.status(405).end(); }

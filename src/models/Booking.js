@@ -1,0 +1,1 @@
+import mongoose from 'mongoose'; const BookingSchema = new mongoose.Schema({ userId:{ type: mongoose.Types.ObjectId, required: true }, mentorId:{ type: mongoose.Types.ObjectId, required: true }, when:String, status:{ type:String, default:'pending' } }, { timestamps:true }); export default mongoose.models.Booking || mongoose.model('Booking', BookingSchema);

@@ -1,0 +1,1 @@
+import mongoose from 'mongoose'; const MentorSchema = new mongoose.Schema({ name:String, skills:String, price:Number, rating:Number }, { timestamps:true }); export default mongoose.models.Mentor || mongoose.model('Mentor', MentorSchema);

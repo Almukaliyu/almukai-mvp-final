@@ -1,0 +1,1 @@
+import mongoose from 'mongoose'; const UserSchema = new mongoose.Schema({ email:{type:String,required:true,unique:true}, password:String, credits:{type:Number,default:200}, role:{type:String,default:'user'}, referrals:{type:Array,default:[]} }, { timestamps:true }); export default mongoose.models.User || mongoose.model('User', UserSchema);

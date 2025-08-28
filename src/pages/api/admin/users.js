@@ -1,0 +1,1 @@
+import { connect } from '@/lib/mongoose'; import User from '@/models/User'; import cookie from 'cookie'; export default async function handler(req,res){ const cookies = cookie.parse(req.headers.cookie || ''); if(!cookies.almukai_admin) return res.status(401).json({ error:'Unauthorized' }); await connect(); const users = await User.find().lean(); res.json({ users }); }
